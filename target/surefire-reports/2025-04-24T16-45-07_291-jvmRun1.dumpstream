@@ -1,0 +1,208 @@
+# Created on 2025-04-24T16:45:12.720
+TestSet has not finished before stream error has appeared >> initializing exit by non-null configuration: null
+java.io.EOFException
+	at java.base/java.io.DataInputStream.readFully(DataInputStream.java:210)
+	at java.base/java.io.DataInputStream.readInt(DataInputStream.java:385)
+	at org.apache.maven.surefire.booter.MasterProcessCommand.decode(MasterProcessCommand.java:115)
+	at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:391)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+
+# Created on 2025-04-24T16:45:12.905
+Unexpected IOException: 6,1,com.parkit.parkingsystem.FareCalculatorServiceTest,calculateFareCarWithLessThanOneHourParkingTime,null,null,null
+
+
+# Created on 2025-04-24T16:45:12.921
+Unexpected IOException: 5,1,com.parkit.parkingsystem.FareCalculatorServiceTest,calculateFareUnkownType,null,null,null
+
+
+# Created on 2025-04-24T16:45:12.937
+Unexpected IOException: 6,1,com.parkit.parkingsystem.FareCalculatorServiceTest,calculateFareUnkownType,null,null,null
+
+
+# Created on 2025-04-24T16:45:12.951
+Unexpected IOException: 5,1,com.parkit.parkingsystem.FareCalculatorServiceTest,calculateFareCar,null,null,null
+
+
+# Created on 2025-04-24T16:45:12.967
+Unexpected IOException: 6,1,com.parkit.parkingsystem.FareCalculatorServiceTest,calculateFareCar,null,null,null
+
+
+# Created on 2025-04-24T16:45:12.967
+Unexpected IOException: 5,1,com.parkit.parkingsystem.FareCalculatorServiceTest,calculateFareBike,null,null,null
+
+
+# Created on 2025-04-24T16:45:13.023
+Unexpected IOException: 6,1,com.parkit.parkingsystem.FareCalculatorServiceTest,calculateFareBike,null,null,null
+
+
+# Created on 2025-04-24T16:45:13.039
+Unexpected IOException: 5,1,com.parkit.parkingsystem.FareCalculatorServiceTest,calculateFareCarWithMoreThanADayParkingTime,null,null,null
+
+
+# Created on 2025-04-24T16:45:13.055
+Unexpected IOException: 6,1,com.parkit.parkingsystem.FareCalculatorServiceTest,calculateFareCarWithMoreThanADayParkingTime,null,null,null
+
+
+# Created on 2025-04-24T16:45:13.075
+Unexpected IOException: 5,1,com.parkit.parkingsystem.FareCalculatorServiceTest,calculateFareBikeWithLessThanOneHourParkingTime,null,null,null
+
+
+# Created on 2025-04-24T16:45:13.075
+Unexpected IOException: 6,1,com.parkit.parkingsystem.FareCalculatorServiceTest,calculateFareBikeWithLessThanOneHourParkingTime,null,null,null
+
+
+# Created on 2025-04-24T16:45:13.090
+Unexpected IOException: 5,1,com.parkit.parkingsystem.FareCalculatorServiceTest,calculateFareBikeWithFutureInTime,null,null,null
+
+
+# Created on 2025-04-24T16:45:13.122
+Unexpected IOException with stream: java.lang.instrument.IllegalClassFormatException: Error while instrumenting sun/util/resources/provider/NonBaseLocaleDataMetaInfo.
+
+# Created on 2025-04-24T16:45:13.122
+Unexpected IOException with stream: 
+
+
+# Created on 2025-04-24T16:45:13.122
+Unexpected IOException with stream: 	at org.jacoco.agent.rt.internal_43f5073.CoverageTransformer.transform(CoverageTransformer.java:94)
+
+# Created on 2025-04-24T16:45:13.122
+Unexpected IOException with stream: 
+
+
+# Created on 2025-04-24T16:45:13.122
+Unexpected IOException with stream: 	at java.instrument/java.lang.instrument.ClassFileTransformer.transform(ClassFileTransformer.java:244)
+
+# Created on 2025-04-24T16:45:13.137
+Unexpected IOException with stream: 
+
+
+# Created on 2025-04-24T16:45:13.137
+Unexpected IOException with stream: 	at java.instrument/sun.instrument.TransformerManager.transform(TransformerManager.java:188)
+
+# Created on 2025-04-24T16:45:13.137
+Unexpected IOException with stream: 
+
+
+# Created on 2025-04-24T16:45:13.137
+Unexpected IOException with stream: 	at java.instrument/sun.instrument.InstrumentationImpl.transform(InstrumentationImpl.java:610)
+
+# Created on 2025-04-24T16:45:13.153
+Unexpected IOException with stream: 
+
+
+# Created on 2025-04-24T16:45:13.168
+Unexpected IOException with stream: 	at java.base/java.lang.ClassLoader.defineClass2(Native Method)
+
+# Created on 2025-04-24T16:45:13.168
+Unexpected IOException with stream: 
+
+
+# Created on 2025-04-24T16:45:13.168
+Unexpected IOException with stream: 	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1118)
+
+# Created on 2025-04-24T16:45:13.187
+Unexpected IOException with stream: 
+
+
+# Created on 2025-04-24T16:45:13.187
+Unexpected IOException with stream: 	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:182)
+
+# Created on 2025-04-24T16:45:13.187
+Unexpected IOException with stream: 
+
+
+# Created on 2025-04-24T16:45:13.187
+Unexpected IOException with stream: 	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:821)
+
+# Created on 2025-04-24T16:45:13.203
+Unexpected IOException with stream: 
+
+
+# Created on 2025-04-24T16:45:13.211
+Unexpected IOException with stream: 	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassInModuleOrNull(BuiltinClassLoader.java:741)
+
+# Created on 2025-04-24T16:45:13.235
+Unexpected IOException with stream: 
+
+
+# Created on 2025-04-24T16:45:13.281
+Unexpected IOException with stream: 	at java.base/jdk.internal.loader.BuiltinClassLoader.findClass(BuiltinClassLoader.java:621)
+
+# Created on 2025-04-24T16:45:13.289
+Unexpected IOException with stream: 
+
+
+# Created on 2025-04-24T16:45:13.289
+Unexpected IOException with stream: 	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:638)
+
+# Created on 2025-04-24T16:45:13.313
+Unexpected IOException with stream: 
+
+
+# Created on 2025-04-24T16:45:13.337
+Unexpected IOException with stream: 	at java.base/java.lang.Class.forName(Class.java:625)
+
+# Created on 2025-04-24T16:45:13.353
+Unexpected IOException with stream: 
+
+
+# Created on 2025-04-24T16:45:13.361
+Unexpected IOException with stream: 	at java.base/java.lang.Class.forName(Class.java:600)
+
+# Created on 2025-04-24T16:45:13.361
+Unexpected IOException with stream: 
+
+
+# Created on 2025-04-24T16:45:13.375
+Unexpected IOException with stream: 	at java.base/java.util.ServiceLoader.loadProvider(ServiceLoader.java:859)
+
+# Created on 2025-04-24T16:45:13.375
+Unexpected IOException with stream: 
+
+
+# Created on 2025-04-24T16:45:13.375
+Unexpected IOException with stream: 	at java.base/java.util.ServiceLoader$ModuleServicesLookupIterator.hasNext(ServiceLoader.java:1084)
+
+# Created on 2025-04-24T16:45:13.375
+Unexpected IOException with stream: 
+
+
+# Created on 2025-04-24T16:45:13.375
+Unexpected IOException with stream: 	at java.base/java.util.ServiceLoader$2.hasNext(ServiceLoader.java:1309)
+
+# Created on 2025-04-24T16:45:13.399
+Unexpected IOException with stream: 
+
+
+# Created on 2025-04-24T16:45:13.399
+Unexpected IOException with stream: 	at java.base/java.util.ServiceLoader$3.hasNext(ServiceLoader.java:1393)
+
+# Created on 2025-04-24T16:45:13.399
+Unexpected IOException with stream: 
+
+
+# Created on 2025-04-24T16:45:13.399
+Unexpected IOException with stream: 	at java.base/sun.util.locale.provider.JRELocaleProviderAdapter.lambda$createSupportedLocaleString$13(JRELocaleProviderAdapter.java:469)
+
+# Created on 2025-04-24T16:45:13.415
+Unexpected IOException with stream: 
+
+
+# Created on 2025-04-24T16:45:13.415
+Unexpected IOException with stream: 	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
+
+# Created on 2025-04-24T16:45:13.415
+Unexpected IOException with stream: 
+
+
+# Created on 2025-04-24T16:45:13.415
+Unexpected IOException with stream: 	at java.base/sun.util.locale.provider.JRELocaleProviderAdapter.createSupportedLocaleString(JRELocaleProviderAdapter.java:466)
+
+# Created on 2025-04-24T16:45:13.430
+Unexpected IOException with stream: 
+
+
+# Created on 2025-04-24T16:45:13.430
+Unexpected IOException with stream: 	at java.base/sun.util.locale.provider.JRELocaleProviderAdapter.createLanguageTagSet(JRELocaleProviderAdapter.java:453)
+
