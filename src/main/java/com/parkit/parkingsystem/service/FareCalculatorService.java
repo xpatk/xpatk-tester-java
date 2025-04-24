@@ -14,7 +14,7 @@ public class FareCalculatorService {
         long outHour = ticket.getOutTime().getTime();
         double durationInMinutes = (outHour - inHour) / (1000.0 * 60);
 
-        if (durationInMinutes < 30) {
+        if (durationInMinutes <= 30) {
             ticket.setPrice(0);
             return;
         }
