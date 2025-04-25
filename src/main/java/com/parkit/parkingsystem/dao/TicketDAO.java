@@ -86,4 +86,25 @@ public class TicketDAO {
         }
         return false;
     }
+
+    public boolean isRecurrentUser(String vehicleRegNumber) {
+        Connection con = null;
+        boolean isRecurrent = false;
+        try {
+            con = dataBaseConfig.getConnection();
+            PreparedStatement ps = con.prepareStatement("SELECT COUNT(*) FROM ticket WHERE VEHICLE_REG_NUMBER = ?");
+            ps.setString(1, vehicleRegNumber);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                isRecurrent = rs.getInt(1) > 1; // parked at least once
+            }
+            dataBaseConfig.closeResultSet(rs);
+            dataBaseConfig.closePreparedStatement(ps);
+        } catch (Exception ex) {
+            logger.error("Error checking if user is recurrent", ex);
+        } finally {
+            dataBaseConfig.closeConnection(con);
+        }
+        return isRecurrent;
+    }
 }
