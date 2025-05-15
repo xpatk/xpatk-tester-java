@@ -87,24 +87,24 @@ public class TicketDAO {
         return false;
     }
 
-    public boolean isRecurrentUser(String vehicleRegNumber) {
+    public int getNbTickets(String vehicleRegNumber) {
         Connection con = null;
-        boolean isRecurrent = false;
+        int ticketCount = 0;
         try {
             con = dataBaseConfig.getConnection();
             PreparedStatement ps = con.prepareStatement("SELECT COUNT(*) FROM ticket WHERE VEHICLE_REG_NUMBER = ?");
             ps.setString(1, vehicleRegNumber);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
-                isRecurrent = rs.getInt(1) > 1; // parked at least once
+                ticketCount = rs.getInt(1);
             }
             dataBaseConfig.closeResultSet(rs);
             dataBaseConfig.closePreparedStatement(ps);
         } catch (Exception ex) {
-            logger.error("Error checking if user is recurrent", ex);
+            logger.error("Error counting tickets for vehicle", ex);
         } finally {
             dataBaseConfig.closeConnection(con);
         }
-        return isRecurrent;
+        return ticketCount;
     }
 }
