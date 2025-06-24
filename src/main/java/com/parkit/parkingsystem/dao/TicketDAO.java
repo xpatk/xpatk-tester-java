@@ -8,10 +8,7 @@ import com.parkit.parkingsystem.model.Ticket;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Timestamp;
+import java.sql.*;
 
 public class TicketDAO {
 
@@ -85,6 +82,24 @@ public class TicketDAO {
             dataBaseConfig.closeConnection(con);
         }
         return false;
+    }
+
+    public boolean updateInTime(Ticket ticket) {
+       Connection con = null;
+       try {
+           con = dataBaseConfig.getConnection();
+           PreparedStatement ps = con.prepareStatement("UPDATE ticket SET IN_TIME=? WHERE id=?");
+           ps.setTimestamp(1, new Timestamp(ticket.getInTime().getTime()));
+           ps.setInt(2, ticket.getId());
+           ps.execute();
+           return true;
+       } catch (Exception ex){
+           logger.error("Error saving ticket info",ex);
+       } finally {
+           dataBaseConfig.closeConnection(con);
+       }
+        return false;
+
     }
 
     public int getNbTickets(String vehicleRegNumber) {

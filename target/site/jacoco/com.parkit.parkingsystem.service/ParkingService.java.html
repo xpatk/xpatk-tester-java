@@ -106,7 +106,7 @@ public class ParkingService {
 
 <span class="fc" id="L107">            int nb_tickets = ticketDAO.getNbTickets(vehicleRegNumber);</span>
 
-<span class="pc bpc" id="L109" title="1 of 2 branches missed.">            boolean isRecurrentUser = nb_tickets &gt; 1;</span>
+<span class="fc bfc" id="L109" title="All 2 branches covered.">            boolean isRecurrentUser = nb_tickets &gt; 1;</span>
 
 <span class="fc" id="L111">            fareCalculatorService.calculateFare(ticket, isRecurrentUser);</span>
 <span class="fc bfc" id="L112" title="All 2 branches covered.">            if(ticketDAO.updateTicket(ticket)) {</span>

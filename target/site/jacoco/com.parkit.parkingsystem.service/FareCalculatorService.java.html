@@ -12,28 +12,30 @@ import com.parkit.parkingsystem.model.Ticket;
 
 <span class="fc" id="L13">        long inTimeMilliseconds = ticket.getInTime().getTime();</span>
 <span class="fc" id="L14">        long outTimeMilliseconds = ticket.getOutTime().getTime();</span>
-<span class="fc" id="L15">        double durationInMinutes = (outTimeMilliseconds - inTimeMilliseconds) / (1000.0 * 60);</span>
+<span class="fc" id="L15">        double durationInHours = (outTimeMilliseconds - inTimeMilliseconds) / (1000.0 * 60 * 60);</span>
 
-<span class="fc bfc" id="L17" title="All 2 branches covered.">        if (durationInMinutes &lt;= 30) {</span>
+<span class="fc bfc" id="L17" title="All 2 branches covered.">        if (durationInHours &lt;= 0.5) {</span>
 <span class="fc" id="L18">            ticket.setPrice(0);</span>
 <span class="fc" id="L19">            return;</span>
         }
 
-<span class="fc" id="L22">        double durationInHours = durationInMinutes / 60;</span>
-
-<span class="pc bpc" id="L24" title="1 of 3 branches missed.">        switch (ticket.getParkingSpot().getParkingType()){</span>
+<span class="pc bpc" id="L22" title="1 of 3 branches missed.">        switch (ticket.getParkingSpot().getParkingType()){</span>
             case CAR: {
-<span class="fc" id="L26">                double price = durationInHours * Fare.CAR_RATE_PER_HOUR;</span>
-<span class="fc bfc" id="L27" title="All 2 branches covered.">                ticket.setPrice(discount ? price * 0.95 : price);</span>
-<span class="fc" id="L28">                break;</span>
+<span class="fc" id="L24">                double price = roundPrice(durationInHours * Fare.CAR_RATE_PER_HOUR);</span>
+<span class="fc bfc" id="L25" title="All 2 branches covered.">                ticket.setPrice(discount ? price * 0.95 : price);</span>
+<span class="fc" id="L26">                break;</span>
             }
             case BIKE: {
-<span class="fc" id="L31">                double price = durationInHours * Fare.BIKE_RATE_PER_HOUR;</span>
-<span class="fc bfc" id="L32" title="All 2 branches covered.">                ticket.setPrice(discount ? price * 0.95 : price);</span>
-<span class="fc" id="L33">                break;</span>
+<span class="fc" id="L29">                double price = roundPrice(durationInHours * Fare.BIKE_RATE_PER_HOUR);</span>
+<span class="fc bfc" id="L30" title="All 2 branches covered.">                ticket.setPrice(discount ? price * 0.95 : price);</span>
+<span class="fc" id="L31">                break;</span>
             }
-<span class="nc" id="L35">            default: throw new IllegalArgumentException(&quot;Unknown Parking Type&quot;);</span>
+<span class="nc" id="L33">            default: throw new IllegalArgumentException(&quot;Unknown Parking Type&quot;);</span>
         }
-<span class="fc" id="L37">    }</span>
+<span class="fc" id="L35">    }</span>
+
+    private double roundPrice(double price) {
+<span class="fc" id="L38">        return Math.round(price * 100.0) / 100.0;</span>
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
