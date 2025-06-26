@@ -33,6 +33,11 @@ public class ParkingService {
             if(parkingSpot !=null && parkingSpot.getId() > 0){
                 String vehicleRegNumber = getVehicleRegNumber();
                 int nbTickets = ticketDAO.getNbTickets(vehicleRegNumber);
+                Ticket existingOpenTicket = ticketDAO.getOpenTicket(vehicleRegNumber);
+                if(existingOpenTicket != null){
+                    System.out.println("A ticket already exists for this vehicle without a recorded exit time.");
+                    return;
+                }
                 if (nbTickets > 0) {
                     System.out.println("Welcome back! As a recurring user of our parking lot, you'll benefit from a 5% discount.");
                 }
