@@ -11,11 +11,22 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+/**
+ * Data Access Object (DAO) for handling parking spot data operations.
+ * Provides methods to retrieve the next available parking slot and to update
+ * the availability status of a parking spot in the database.
+ */
 public class ParkingSpotDAO {
     private static final Logger logger = LogManager.getLogger("ParkingSpotDAO");
 
     public DataBaseConfig dataBaseConfig = new DataBaseConfig();
 
+    /**
+     * Retrieves the ID of the next available parking slot for the given parking type.
+     *
+     * @param parkingType the type of parking spot (e.g., CAR or BIKE)
+     * @return the ID of the next available parking slot, or -1 if none are available or on error
+     */
     public int getNextAvailableSlot(ParkingType parkingType){
         Connection con = null;
         int result=-1;
@@ -37,6 +48,12 @@ public class ParkingSpotDAO {
         return result;
     }
 
+    /**
+     * Updates the availability status of a parking spot.
+     *
+     * @param parkingSpot the parking spot with updated availability status
+     * @return true if the update was successful, false otherwise
+     */
     public boolean updateParking(ParkingSpot parkingSpot){
         //update the availability fo that parking slot
         Connection con = null;

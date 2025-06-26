@@ -10,12 +10,24 @@ import org.apache.logging.log4j.Logger;
 
 import java.sql.*;
 
+/**
+ * Data Access Object (DAO) for handling CRUD operations related to tickets
+ * in the parking system database.
+ * Provides methods to save, retrieve, update tickets, and count ticket records
+ * associated with a specific vehicle registration number.
+ */
 public class TicketDAO {
 
     private static final Logger logger = LogManager.getLogger("TicketDAO");
 
     public DataBaseConfig dataBaseConfig = new DataBaseConfig();
 
+    /**
+     * Saves a new ticket record in the database.
+     *
+     * @param ticket the ticket to be saved
+     * @return true if the operation was successful, false otherwise
+     */
     public boolean saveTicket(Ticket ticket) {
         Connection con = null;
         try {
@@ -37,6 +49,12 @@ public class TicketDAO {
         }
     }
 
+    /**
+     * Retrieves the most recent ticket for a given vehicle registration number.
+     *
+     * @param vehicleRegNumber the vehicle registration number to search for
+     * @return the Ticket if found, or null if no ticket exists
+     */
     public Ticket getTicket(String vehicleRegNumber) {
         Connection con = null;
         Ticket ticket = null;
@@ -66,6 +84,12 @@ public class TicketDAO {
         }
     }
 
+    /**
+     * Updates the ticket information in the database, including price and exit time.
+     *
+     * @param ticket the ticket with updated information
+     * @return true if the update was successful, false otherwise
+     */
     public boolean updateTicket(Ticket ticket) {
         Connection con = null;
         try {
@@ -84,6 +108,12 @@ public class TicketDAO {
         return false;
     }
 
+    /**
+     * Updates the entry time (IN_TIME) of a ticket.
+     *
+     * @param ticket the ticket with the updated entry time
+     * @return true if the update was successful, false otherwise
+     */
     public boolean updateInTime(Ticket ticket) {
         Connection con = null;
         try {
@@ -102,6 +132,12 @@ public class TicketDAO {
 
     }
 
+    /**
+     * Counts the total number of tickets associated with a given vehicle registration number.
+     *
+     * @param vehicleRegNumber the vehicle registration number to count tickets for
+     * @return the number of tickets found
+     */
     public int getNbTickets(String vehicleRegNumber) {
         Connection con = null;
         int ticketCount = 0;
@@ -123,6 +159,12 @@ public class TicketDAO {
         return ticketCount;
     }
 
+    /**
+     * Retrieves the currently open ticket (a ticket without an exit time) for a given vehicle.
+     *
+     * @param vehicleRegNumber the vehicle registration number to search for
+     * @return the open Ticket if found, or null if no open ticket exists
+     */
     public Ticket getOpenTicket(String vehicleRegNumber) {
         Connection con = null;
         Ticket ticket = null;

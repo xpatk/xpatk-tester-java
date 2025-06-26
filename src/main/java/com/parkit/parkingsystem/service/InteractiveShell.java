@@ -6,6 +6,12 @@ import com.parkit.parkingsystem.util.InputReaderUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * Provides the interactive shell interface for the Parking System application.
+ *
+ * This class manages the main menu loop, processes user input, and
+ * delegates vehicle entry and exit operations to the ParkingService.
+ */
 public class InteractiveShell {
 
     private static final Logger logger = LogManager.getLogger("InteractiveShell");
